@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6830362D13620479000E4EC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6830362C13620479000E4EC3 /* UIKit.framework */; };
+		6830362F13620479000E4EC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6830362E13620479000E4EC3 /* Foundation.framework */; };
+		6830363113620479000E4EC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6830363013620479000E4EC3 /* CoreGraphics.framework */; };
+		6830363713620479000E4EC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6830363513620479000E4EC3 /* InfoPlist.strings */; };
+		6830363A13620479000E4EC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830363913620479000E4EC3 /* main.m */; };
+		6830366A136205DF000E4EC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68303665136205DF000E4EC3 /* AppDelegate.m */; };
+		68303670136205EB000E4EC3 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6830366E136205EB000E4EC3 /* MainWindow_iPad.xib */; };
+		68303671136205EB000E4EC3 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6830366F136205EB000E4EC3 /* MainWindow_iPhone.xib */; };
+		683036741362061B000E4EC3 /* astroland.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 683036731362061B000E4EC3 /* astroland.jpg */; };
+		6830367F13620672000E4EC3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830367E13620672000E4EC3 /* RootViewController.m */; };
+		6830368113620701000E4EC3 /* RootView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6830368013620700000E4EC3 /* RootView~ipad.xib */; };
+		683036831362092B000E4EC3 /* RootView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683036821362092B000E4EC3 /* RootView~iphone.xib */; };
+		6876364713621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */; };
+		6876364A1362209200B19700 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 687636481362209100B19700 /* LICENSE */; };
+		6876364B1362209200B19700 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 687636491362209200B19700 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6830362813620479000E4EC3 /* OneFingerRotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneFingerRotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6830362C13620479000E4EC3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6830362E13620479000E4EC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6830363013620479000E4EC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6830363413620479000E4EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6830363613620479000E4EC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6830363813620479000E4EC3 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		6830363913620479000E4EC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68303664136205DF000E4EC3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		68303665136205DF000E4EC3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6830366E136205EB000E4EC3 /* MainWindow_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow_iPad.xib; sourceTree = "<group>"; };
+		6830366F136205EB000E4EC3 /* MainWindow_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		683036731362061B000E4EC3 /* astroland.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = astroland.jpg; sourceTree = "<group>"; };
+		6830367D13620672000E4EC3 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		6830367E13620672000E4EC3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6830368013620700000E4EC3 /* RootView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RootView~ipad.xib"; sourceTree = "<group>"; };
+		683036821362092B000E4EC3 /* RootView~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RootView~iphone.xib"; sourceTree = "<group>"; };
+		6876364513621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTOneFingerRotationGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
+		6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOneFingerRotationGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
+		687636481362209100B19700 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		687636491362209200B19700 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6830362513620479000E4EC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6830362D13620479000E4EC3 /* UIKit.framework in Frameworks */,
+				6830362F13620479000E4EC3 /* Foundation.framework in Frameworks */,
+				6830363113620479000E4EC3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6830361D13620479000E4EC3 = {
+			isa = PBXGroup;
+			children = (
+				687636481362209100B19700 /* LICENSE */,
+				687636491362209200B19700 /* README.md */,
+				6830363213620479000E4EC3 /* OneFingerRotation */,
+				6830362B13620479000E4EC3 /* Frameworks */,
+				6830362913620479000E4EC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6830362913620479000E4EC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6830362813620479000E4EC3 /* OneFingerRotation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6830362B13620479000E4EC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6830362C13620479000E4EC3 /* UIKit.framework */,
+				6830362E13620479000E4EC3 /* Foundation.framework */,
+				6830363013620479000E4EC3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6830363213620479000E4EC3 /* OneFingerRotation */ = {
+			isa = PBXGroup;
+			children = (
+				68303663136205DF000E4EC3 /* Classes */,
+				6830363313620479000E4EC3 /* Supporting Files */,
+				683036721362061B000E4EC3 /* images */,
+				6830366D136205EB000E4EC3 /* xibs */,
+			);
+			path = OneFingerRotation;
+			sourceTree = "<group>";
+		};
+		6830363313620479000E4EC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6830363413620479000E4EC3 /* Info.plist */,
+				6830363513620479000E4EC3 /* InfoPlist.strings */,
+				6830363813620479000E4EC3 /* Prefix.pch */,
+				6830363913620479000E4EC3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68303663136205DF000E4EC3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				68303664136205DF000E4EC3 /* AppDelegate.h */,
+				68303665136205DF000E4EC3 /* AppDelegate.m */,
+				6830367D13620672000E4EC3 /* RootViewController.h */,
+				6830367E13620672000E4EC3 /* RootViewController.m */,
+				6876364513621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.h */,
+				6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6830366D136205EB000E4EC3 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				6830366E136205EB000E4EC3 /* MainWindow_iPad.xib */,
+				6830366F136205EB000E4EC3 /* MainWindow_iPhone.xib */,
+				6830368013620700000E4EC3 /* RootView~ipad.xib */,
+				683036821362092B000E4EC3 /* RootView~iphone.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
+		683036721362061B000E4EC3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				683036731362061B000E4EC3 /* astroland.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6830362713620479000E4EC3 /* OneFingerRotation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6830364E13620479000E4EC3 /* Build configuration list for PBXNativeTarget "OneFingerRotation" */;
+			buildPhases = (
+				6830362413620479000E4EC3 /* Sources */,
+				6830362513620479000E4EC3 /* Frameworks */,
+				6830362613620479000E4EC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneFingerRotation;
+			productName = OneFingerRotation;
+			productReference = 6830362813620479000E4EC3 /* OneFingerRotation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6830361F13620479000E4EC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "White Peak Software Inc.";
+			};
+			buildConfigurationList = 6830362213620479000E4EC3 /* Build configuration list for PBXProject "OneFingerRotation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6830361D13620479000E4EC3;
+			productRefGroup = 6830362913620479000E4EC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6830362713620479000E4EC3 /* OneFingerRotation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6830362613620479000E4EC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6830363713620479000E4EC3 /* InfoPlist.strings in Resources */,
+				68303670136205EB000E4EC3 /* MainWindow_iPad.xib in Resources */,
+				68303671136205EB000E4EC3 /* MainWindow_iPhone.xib in Resources */,
+				683036741362061B000E4EC3 /* astroland.jpg in Resources */,
+				6830368113620701000E4EC3 /* RootView~ipad.xib in Resources */,
+				683036831362092B000E4EC3 /* RootView~iphone.xib in Resources */,
+				6876364A1362209200B19700 /* LICENSE in Resources */,
+				6876364B1362209200B19700 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6830362413620479000E4EC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6830363A13620479000E4EC3 /* main.m in Sources */,
+				6830366A136205DF000E4EC3 /* AppDelegate.m in Sources */,
+				6830367F13620672000E4EC3 /* RootViewController.m in Sources */,
+				6876364713621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6830363513620479000E4EC3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6830363613620479000E4EC3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6830364C13620479000E4EC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6830364D13620479000E4EC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6830364F13620479000E4EC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OneFingerRotation/Prefix.pch;
+				INFOPLIST_FILE = OneFingerRotation/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6830365013620479000E4EC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OneFingerRotation/Prefix.pch;
+				INFOPLIST_FILE = OneFingerRotation/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6830362213620479000E4EC3 /* Build configuration list for PBXProject "OneFingerRotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6830364C13620479000E4EC3 /* Debug */,
+				6830364D13620479000E4EC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6830364E13620479000E4EC3 /* Build configuration list for PBXNativeTarget "OneFingerRotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6830364F13620479000E4EC3 /* Debug */,
+				6830365013620479000E4EC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6830361F13620479000E4EC3 /* Project object */;
+}
