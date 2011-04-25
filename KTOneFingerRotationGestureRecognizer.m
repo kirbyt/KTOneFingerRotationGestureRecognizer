@@ -60,17 +60,15 @@
    // The second figure is on the opposite side of the virtual
    // circle that represents the rotation gesture.
 
-   // Convert to screen coordinates. Gaves us better
-   // rotation control.
-   UIWindow *window = [[self view] window];
-   CGPoint center = [window center];
-   CGPoint currentTouchPoint = [touch locationInView:window];
-   CGPoint previousTouchPoint = [touch previousLocationInView:window];
+   UIView *view = [self view];
+   CGPoint center = CGPointMake(CGRectGetMidX([view bounds]), CGRectGetMidY([view bounds]));
+   CGPoint currentTouchPoint = [touch locationInView:view];
+   CGPoint previousTouchPoint = [touch previousLocationInView:view];
    
    // use the movement of the touch to decide
    // how much to rotate the carousel
-   CGPoint line2Start = currentTouchPoint; //[touch locationInView:view];
-   CGPoint line1Start = previousTouchPoint; //[touch previousLocationInView:view];
+   CGPoint line2Start = currentTouchPoint;
+   CGPoint line1Start = previousTouchPoint;
    CGPoint line2End = CGPointMake(center.x + (center.x - line2Start.x), center.y + (center.y - line2Start.y));
    CGPoint line1End = CGPointMake(center.x + (center.x - line1Start.x), center.y + (center.y - line1Start.y));
    
