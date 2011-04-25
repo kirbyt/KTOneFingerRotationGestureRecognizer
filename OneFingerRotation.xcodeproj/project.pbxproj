@@ -19,6 +19,8 @@
 		6830367F13620672000E4EC3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830367E13620672000E4EC3 /* RootViewController.m */; };
 		6830368113620701000E4EC3 /* RootView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6830368013620700000E4EC3 /* RootView~ipad.xib */; };
 		683036831362092B000E4EC3 /* RootView~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683036821362092B000E4EC3 /* RootView~iphone.xib */; };
+		686D53891365B04200FFF635 /* subway.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 686D53871365B04200FFF635 /* subway.jpg */; };
+		686D538A1365B04200FFF635 /* tower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 686D53881365B04200FFF635 /* tower.jpg */; };
 		6876364713621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */; };
 		6876364A1362209200B19700 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 687636481362209100B19700 /* LICENSE */; };
 		6876364B1362209200B19700 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 687636491362209200B19700 /* README.md */; };
@@ -42,6 +44,8 @@
 		6830367E13620672000E4EC3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		6830368013620700000E4EC3 /* RootView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RootView~ipad.xib"; sourceTree = "<group>"; };
 		683036821362092B000E4EC3 /* RootView~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RootView~iphone.xib"; sourceTree = "<group>"; };
+		686D53871365B04200FFF635 /* subway.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = subway.jpg; sourceTree = "<group>"; };
+		686D53881365B04200FFF635 /* tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tower.jpg; sourceTree = "<group>"; };
 		6876364513621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTOneFingerRotationGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
 		6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOneFingerRotationGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
 		687636481362209100B19700 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				683036731362061B000E4EC3 /* astroland.jpg */,
+				686D53871365B04200FFF635 /* subway.jpg */,
+				686D53881365B04200FFF635 /* tower.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 				683036831362092B000E4EC3 /* RootView~iphone.xib in Resources */,
 				6876364A1362209200B19700 /* LICENSE in Resources */,
 				6876364B1362209200B19700 /* README.md in Resources */,
+				686D53891365B04200FFF635 /* subway.jpg in Resources */,
+				686D538A1365B04200FFF635 /* tower.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
