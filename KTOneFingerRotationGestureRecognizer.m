@@ -67,26 +67,7 @@
    
    // use the movement of the touch to decide
    // how much to rotate the carousel
-   CGPoint line2Start = currentTouchPoint;
-   CGPoint line1Start = previousTouchPoint;
-   CGPoint line2End = CGPointMake(center.x + (center.x - line2Start.x), center.y + (center.y - line2Start.y));
-   CGPoint line1End = CGPointMake(center.x + (center.x - line1Start.x), center.y + (center.y - line1Start.y));
-   
-   //////
-   // Calculate the angle in radians.
-   // (From: http://iphonedevelopment.blogspot.com/2009/12/better-two-finger-rotate-gesture.html )
-   CGFloat a = line1End.x - line1Start.x;
-	CGFloat b = line1End.y - line1Start.y;
-	CGFloat c = line2End.x - line2Start.x;
-	CGFloat d = line2End.y - line2Start.y;
-   
-   CGFloat line1Slope = (line1End.y - line1Start.y) / (line1End.x - line1Start.x);
-   CGFloat line2Slope = (line2End.y - line2Start.y) / (line2End.x - line2Start.x);
-	
-	CGFloat degs = acosf(((a*c) + (b*d)) / ((sqrt(a*a + b*b)) * (sqrt(c*c + d*d))));
-
-   CGFloat angleInRadians = (line2Slope > line1Slope) ? degs : -degs;
-   //////
+   CGFloat angleInRadians = atan2f(currentTouchPoint.y - center.y, currentTouchPoint.x - center.x) - atan2f(previousTouchPoint.y - center.y, previousTouchPoint.x - center.x);
    
    [self setRotation:angleInRadians];
 }
