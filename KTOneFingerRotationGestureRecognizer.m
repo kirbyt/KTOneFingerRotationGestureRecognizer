@@ -69,7 +69,12 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-   [self setState:UIGestureRecognizerStateEnded];
+   // Perform final check to make sure a tap was not misinterpreted.
+   if ([self state] == UIGestureRecognizerStateChanged) {
+      [self setState:UIGestureRecognizerStateEnded];
+   } else {
+      [self setState:UIGestureRecognizerStateFailed];
+   }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
