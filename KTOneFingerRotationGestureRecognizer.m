@@ -42,19 +42,16 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-   // We can look at any touch object since we know we 
-   // have only 1. If there were more than 1 then 
-   // touchesBegan:withEvent: would have failed the recognizer.
-   UITouch *touch = [touches anyObject];
-
-   // A tap can have slight movement, but we're not interested
-   // in a tap. We want more movement. So if a tap is detected
-   // fail the recognizer. 
    if ([self state] == UIGestureRecognizerStatePossible) {
       [self setState:UIGestureRecognizerStateBegan];
    } else {
       [self setState:UIGestureRecognizerStateChanged];
    }
+
+   // We can look at any touch object since we know we 
+   // have only 1. If there were more than 1 then 
+   // touchesBegan:withEvent: would have failed the recognizer.
+   UITouch *touch = [touches anyObject];
 
    // To rotate with one finger, we simulate a second finger.
    // The second figure is on the opposite side of the virtual
@@ -65,8 +62,6 @@
    CGPoint currentTouchPoint = [touch locationInView:view];
    CGPoint previousTouchPoint = [touch previousLocationInView:view];
    
-   // use the movement of the touch to decide
-   // how much to rotate the carousel
    CGFloat angleInRadians = atan2f(currentTouchPoint.y - center.y, currentTouchPoint.x - center.x) - atan2f(previousTouchPoint.y - center.y, previousTouchPoint.x - center.x);
    
    [self setRotation:angleInRadians];
