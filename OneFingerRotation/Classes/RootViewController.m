@@ -34,54 +34,49 @@
    return self;
 }
 
+- (void)addRotationGestureToView:(UIView *)view
+{
+   KTOneFingerRotationGestureRecognizer *rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
+   [view addGestureRecognizer:rotation];
+   [rotation release];
+}
+
+- (void)addTapGestureToView:(UIView *)view numberOfTaps:(NSInteger)numberOfTaps
+{
+   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+   [tap setNumberOfTapsRequired:numberOfTaps];
+   [view addGestureRecognizer:tap];
+   [tap release];
+}
+
 - (void)viewDidLoad
 {
    [super viewDidLoad];
-   
-//// Set #if to 1 to add the guester recognizer to the image view.
-//// Set #if to 0 to add the gesture recognizer to the main view.
-//#if 1
-//   [[self imageView] setUserInteractionEnabled:YES];
-//   KTOneFingerRotationGestureRecognizer *rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
-//   [[self imageView] addGestureRecognizer:rotation];
-//   [rotation release];
-//#else
-//   KTOneFingerRotationGestureRecognizer *rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
-//   [[self view] addGestureRecognizer:rotation];
-//   [rotation release];
-//#endif
    
    // UIImageView sets userInteractionEnabled to NO by default.
    [[self imageView1] setUserInteractionEnabled:YES];
    [[self imageView2] setUserInteractionEnabled:YES];
    [[self imageView3] setUserInteractionEnabled:YES];
    
-   KTOneFingerRotationGestureRecognizer *rotation;
+   [self addRotationGestureToView:[self view]];
+   [self addTapGestureToView:[self view] numberOfTaps:1];
    
-   rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
-   [[self view] addGestureRecognizer:rotation];
-   [rotation release];
+   [self addRotationGestureToView:[self imageView1]];
+   [self addTapGestureToView:[self imageView1] numberOfTaps:1];
+
+   [self addRotationGestureToView:[self imageView2]];
+   [self addTapGestureToView:[self imageView2] numberOfTaps:2];
    
-   rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
-   [[self imageView1] addGestureRecognizer:rotation];
-   [rotation release];
-   
-   rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
-   [[self imageView2] addGestureRecognizer:rotation];
-   [rotation release];
-   
-   rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
-   [[self imageView3] addGestureRecognizer:rotation];
-   [rotation release];
-   
+   [self addRotationGestureToView:[self imageView3]];
+   [self addTapGestureToView:[self imageView3] numberOfTaps:3];
 }
 
 - (void)viewDidUnload
 {
-   [super viewDidUnload];
    [self setImageView1:nil];
    [self setImageView2:nil];
    [self setImageView3:nil];
+   [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -95,5 +90,10 @@
    [view setTransform:CGAffineTransformRotate([view transform], [recognizer rotation])];
 }
 
+- (void)tapped:(UITapGestureRecognizer *)recognizer
+{
+   UIView *view = [recognizer view];
+   [view setTransform:CGAffineTransformMakeRotation(0)];
+}
 
 @end
