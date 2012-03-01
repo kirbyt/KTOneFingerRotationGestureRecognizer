@@ -54,7 +54,7 @@
    [[self knobImageView] setUserInteractionEnabled:YES];
 
    // Allow rotation between the start and stop angles.
-   [self setStartAngle:270.0];
+   [self setStartAngle:-90.0];
    [self setStopAngle:90.0];
    
    [self resetKnob:self];
@@ -64,7 +64,7 @@
 {
    CGFloat degrees = radiansToDegrees([recognizer rotation]);
    CGFloat currentAngle = [self currentAngle] + degrees;
-   CGFloat relativeAngle = fabsf(fmodf(currentAngle, 360.0));  // Converts to angle between 0 and 360 degrees.
+   CGFloat relativeAngle = fmodf(currentAngle, 360.0);  // Converts to angle between 0 and 360 degrees.
 
    BOOL shouldRotate = NO;
    if ([self startAngle] <= [self stopAngle]) {
