@@ -11,4 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIImageView *knobImageView;
+
+- (IBAction)resetKnob:(id)sender;
+
 @end

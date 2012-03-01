@@ -10,12 +10,13 @@
 #import "KTOneFingerRotationGestureRecognizer.h"
 
 @interface ViewController ()
-
+@property (nonatomic, assign) CGFloat currentAngle;
 @end
 
 @implementation ViewController
 
 @synthesize knobImageView = _knobImageView;
+@synthesize currentAngle = _currentAngle;
 
 - (void)viewDidLoad
 {
@@ -25,6 +26,8 @@
    KTOneFingerRotationGestureRecognizer *spin = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotated:)];
    [[self knobImageView] addGestureRecognizer:spin];
    [[self knobImageView] setUserInteractionEnabled:YES];
+
+   [self resetKnob:self];
 }
 
 - (void)viewDidUnload
@@ -42,6 +45,17 @@
 {
    UIView *view = [recognizer view];
    [view setTransform:CGAffineTransformRotate([view transform], [recognizer rotation])];
+}
+
+- (IBAction)resetKnob:(id)sender
+{
+   [[self knobImageView] setUserInteractionEnabled:NO];
+   [UIView animateWithDuration:0.20 animations:^{
+      [[self knobImageView] setTransform:CGAffineTransformMakeRotation(0)];
+   } completion:^(BOOL finished) {
+      [[self knobImageView] setUserInteractionEnabled:YES];
+      [self setCurrentAngle:0];
+   }];
 }
 
 @end
