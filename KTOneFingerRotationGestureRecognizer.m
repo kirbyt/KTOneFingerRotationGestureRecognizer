@@ -63,6 +63,17 @@
    CGPoint previousTouchPoint = [touch previousLocationInView:view];
    
    CGFloat angleInRadians = atan2f(currentTouchPoint.y - center.y, currentTouchPoint.x - center.x) - atan2f(previousTouchPoint.y - center.y, previousTouchPoint.x - center.x);
+    if(abs(angleInRadians) > M_PI)
+    {
+        if(angleInRadians > 0)
+        {
+            angleInRadians -= 2 * M_PI;
+        }
+        else 
+        {
+            angleInRadians += 2 * M_PI;
+        }
+    }
    
    [self setRotation:angleInRadians];
 }
