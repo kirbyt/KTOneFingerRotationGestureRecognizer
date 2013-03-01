@@ -27,10 +27,23 @@
 #import "KTOneFingerRotationGestureRecognizer.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
+@interface KTOneFingerRotationGestureRecognizer()
+@property (nonatomic) NSMutableArray * previousTimes;
+@property (nonatomic) NSMutableArray * previousRotations;
+@end
 
 @implementation KTOneFingerRotationGestureRecognizer
 
 @synthesize rotation = rotation_;
+
+- (id)init
+{
+   self = [super init];
+   if (self) {
+      self.velocitySampleSmoothingCount = 4;
+   }
+   return self;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -38,6 +51,9 @@
    if ([[event touchesForGestureRecognizer:self] count] > 1) {
       [self setState:UIGestureRecognizerStateFailed];
    }
+   
+   self.previousTimes = [NSMutableArray array];
+   self.previousRotations = [NSMutableArray array];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -47,33 +63,65 @@
    } else {
       [self setState:UIGestureRecognizerStateChanged];
    }
-
-   // We can look at any touch object since we know we 
-   // have only 1. If there were more than 1 then 
+   
+   // We can look at any touch object since we know we
+   // have only 1. If there were more than 1 then
    // touchesBegan:withEvent: would have failed the recognizer.
    UITouch *touch = [touches anyObject];
-
+   
    // To rotate with one finger, we simulate a second finger.
    // The second figure is on the opposite side of the virtual
    // circle that represents the rotation gesture.
-
+   
    UIView *view = [self view];
    CGPoint center = CGPointMake(CGRectGetMidX([view bounds]), CGRectGetMidY([view bounds]));
    CGPoint currentTouchPoint = [touch locationInView:view];
    CGPoint previousTouchPoint = [touch previousLocationInView:view];
    
    CGFloat angleInRadians = atan2f(currentTouchPoint.y - center.y, currentTouchPoint.x - center.x) - atan2f(previousTouchPoint.y - center.y, previousTouchPoint.x - center.x);
-    if(fabs(angleInRadians) > M_PI)
-    {
-        if(angleInRadians > 0)
-        {
-            angleInRadians -= 2 * M_PI;
-        }
-        else 
-        {
-            angleInRadians += 2 * M_PI;
-        }
-    }
+   
+   ////
+   CGFloat change = angleInRadians - self.rotation;
+   NSDate * now = [NSDate date];
+   [self.previousTimes addObject:now];
+   [self.previousRotations addObject:@(change)];
+   
+   while ( self.previousTimes.count > self.velocitySampleSmoothingCount )
+   {
+      [self.previousTimes removeObjectAtIndex:0];
+   }
+   
+   while ( self.previousRotations.count > self.velocitySampleSmoothingCount )
+   {
+      [self.previousRotations removeObjectAtIndex:0];
+   }
+   
+   NSAssert( self.previousRotations.count == self.previousTimes.count, @"Number of samples must match" );
+   
+   if ( self.previousTimes.count > 1 )
+   {
+      __block CGFloat totalRotation = 0;
+      [self.previousRotations enumerateObjectsUsingBlock:^(NSNumber * obj, NSUInteger idx, BOOL *stop) {
+         totalRotation += [obj floatValue];
+      }];
+      
+      double totalTime = [[self.previousTimes objectAtIndex:0] timeIntervalSinceDate:[self.previousTimes lastObject]];
+      
+      self.velocity = fabsf(totalRotation) / totalTime;
+   }
+   ////
+   
+   if(fabs(angleInRadians) > M_PI)
+   {
+      if(angleInRadians > 0)
+      {
+         angleInRadians -= 2 * M_PI;
+      }
+      else
+      {
+         angleInRadians += 2 * M_PI;
+      }
+   }
    
    [self setRotation:angleInRadians];
 }
