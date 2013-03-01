@@ -30,17 +30,19 @@
 @interface KTOneFingerRotationGestureRecognizer()
 @property (nonatomic) NSMutableArray * previousTimes;
 @property (nonatomic) NSMutableArray * previousRotations;
+@property (nonatomic, assign) CGFloat lastRawRotation;
 @end
 
 @implementation KTOneFingerRotationGestureRecognizer
 
 @synthesize rotation = rotation_;
 
-- (id)init
+-(id)initWithTarget:(id)target action:(SEL)action
 {
-   self = [super init];
-   if (self) {
-      self.velocitySampleSmoothingCount = 4;
+   self = [super initWithTarget:target action:action];
+   if ( self )
+   {
+      self.velocitySampleSmoothingCount = 10;
    }
    return self;
 }
@@ -54,6 +56,8 @@
    
    self.previousTimes = [NSMutableArray array];
    self.previousRotations = [NSMutableArray array];
+   self.velocity = 0;
+   self.lastRawRotation = 0;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -80,36 +84,7 @@
    
    CGFloat angleInRadians = atan2f(currentTouchPoint.y - center.y, currentTouchPoint.x - center.x) - atan2f(previousTouchPoint.y - center.y, previousTouchPoint.x - center.x);
    
-   ////
-   CGFloat change = angleInRadians - self.rotation;
-   NSDate * now = [NSDate date];
-   [self.previousTimes addObject:now];
-   [self.previousRotations addObject:@(change)];
-   
-   while ( self.previousTimes.count > self.velocitySampleSmoothingCount )
-   {
-      [self.previousTimes removeObjectAtIndex:0];
-   }
-   
-   while ( self.previousRotations.count > self.velocitySampleSmoothingCount )
-   {
-      [self.previousRotations removeObjectAtIndex:0];
-   }
-   
-   NSAssert( self.previousRotations.count == self.previousTimes.count, @"Number of samples must match" );
-   
-   if ( self.previousTimes.count > 1 )
-   {
-      __block CGFloat totalRotation = 0;
-      [self.previousRotations enumerateObjectsUsingBlock:^(NSNumber * obj, NSUInteger idx, BOOL *stop) {
-         totalRotation += [obj floatValue];
-      }];
-      
-      double totalTime = [[self.previousTimes objectAtIndex:0] timeIntervalSinceDate:[self.previousTimes lastObject]];
-      
-      self.velocity = fabsf(totalRotation) / totalTime;
-   }
-   ////
+   [self updateVelocityTracking:angleInRadians];
    
    if(fabs(angleInRadians) > M_PI)
    {
@@ -139,6 +114,39 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
    [self setState:UIGestureRecognizerStateFailed];
+}
+
+- (void)updateVelocityTracking:(CGFloat)angleInRadians
+{
+   CGFloat change = angleInRadians + self.lastRawRotation;
+   self.lastRawRotation = angleInRadians;
+   NSDate * now = [NSDate date];
+   [self.previousTimes addObject:now];
+   [self.previousRotations addObject:@(change)];
+   
+   while ( self.previousTimes.count > self.velocitySampleSmoothingCount )
+   {
+      [self.previousTimes removeObjectAtIndex:0];
+   }
+   
+   while ( self.previousRotations.count > self.velocitySampleSmoothingCount )
+   {
+      [self.previousRotations removeObjectAtIndex:0];
+   }
+   
+   NSAssert( self.previousRotations.count == self.previousTimes.count, @"Number of samples must match" );
+   
+   if ( self.previousTimes.count > 1 )
+   {
+      __block CGFloat totalRotation = 0;
+      [self.previousRotations enumerateObjectsUsingBlock:^(NSNumber * obj, NSUInteger idx, BOOL *stop) {
+         totalRotation += [obj floatValue];
+      }];
+      
+      double totalTime = [[self.previousTimes lastObject] timeIntervalSinceDate:[self.previousTimes objectAtIndex:0]];
+      
+      self.velocity = totalRotation / totalTime;
+   }
 }
 
 @end
