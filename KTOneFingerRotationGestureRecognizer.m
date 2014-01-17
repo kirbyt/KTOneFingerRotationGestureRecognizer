@@ -28,8 +28,8 @@
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 @interface KTOneFingerRotationGestureRecognizer()
-@property (nonatomic) NSMutableArray * previousTimes;
-@property (nonatomic) NSMutableArray * previousRotations;
+@property (unsafe_unretained, nonatomic) NSMutableArray * previousTimes;
+@property (unsafe_unretained, nonatomic) NSMutableArray * previousRotations;
 @property (nonatomic, assign) CGFloat lastRawRotation;
 @end
 

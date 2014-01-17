@@ -19,10 +19,9 @@
 - (void)dealloc
 {
    
-   [imageView1_ release], imageView1_ = nil;
-   [imageView2_ release], imageView2_ = nil;
-   [imageView3_ release], imageView3_ = nil;
-   [super dealloc];
+   imageView1_ = nil;
+   imageView2_ = nil;
+   imageView3_ = nil;
 }
 
 - (id)init
@@ -38,7 +37,6 @@
 {
    KTOneFingerRotationGestureRecognizer *rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
    [view addGestureRecognizer:rotation];
-   [rotation release];
 }
 
 - (void)addTapGestureToView:(UIView *)view numberOfTaps:(NSInteger)numberOfTaps
@@ -46,7 +44,6 @@
    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
    [tap setNumberOfTapsRequired:numberOfTaps];
    [view addGestureRecognizer:tap];
-   [tap release];
 }
 
 - (void)viewDidLoad
