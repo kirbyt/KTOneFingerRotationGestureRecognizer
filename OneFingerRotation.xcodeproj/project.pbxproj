@@ -24,6 +24,7 @@
 		6876364713621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */; };
 		6876364A1362209200B19700 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 687636481362209100B19700 /* LICENSE */; };
 		6876364B1362209200B19700 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 687636491362209200B19700 /* README.md */; };
+		BE27451B1888B2E20030F616 /* HFUCWRotationalPanRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE27451A1888B2E20030F616 /* HFUCWRotationalPanRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		6876364613621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOneFingerRotationGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
 		687636481362209100B19700 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		687636491362209200B19700 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BE2745191888B2E10030F616 /* HFUCWRotationalPanRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFUCWRotationalPanRecognizer.h; sourceTree = "<group>"; };
+		BE27451A1888B2E20030F616 /* HFUCWRotationalPanRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFUCWRotationalPanRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 		68303663136205DF000E4EC3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE2745191888B2E10030F616 /* HFUCWRotationalPanRecognizer.h */,
+				BE27451A1888B2E20030F616 /* HFUCWRotationalPanRecognizer.m */,
 				68303664136205DF000E4EC3 /* AppDelegate.h */,
 				68303665136205DF000E4EC3 /* AppDelegate.m */,
 				6830367D13620672000E4EC3 /* RootViewController.h */,
@@ -223,6 +228,7 @@
 			files = (
 				6830363A13620479000E4EC3 /* main.m in Sources */,
 				6830366A136205DF000E4EC3 /* AppDelegate.m in Sources */,
+				BE27451B1888B2E20030F616 /* HFUCWRotationalPanRecognizer.m in Sources */,
 				6830367F13620672000E4EC3 /* RootViewController.m in Sources */,
 				6876364713621C9E00B19700 /* KTOneFingerRotationGestureRecognizer.m in Sources */,
 			);
@@ -266,7 +272,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
