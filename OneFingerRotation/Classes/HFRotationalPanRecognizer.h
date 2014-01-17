@@ -1,5 +1,5 @@
 //
-//  HFUCWRotationalPanRecognizer.m
+//  HFRotationalPanRecognizer.m
 //
 //  Created by Joseph Lord on 15/01/2014.
 //  Copyright (c) 2014 Human Friendly Ltd.
@@ -12,7 +12,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HFUCWRotationalPanRecognizer : UIGestureRecognizer
+@interface HFRotationalPanRecognizer : UIGestureRecognizer
 
 // If you want incremental updates you can reset this to zero during the gesture
 @property (nonatomic)CGFloat rotationAngle;

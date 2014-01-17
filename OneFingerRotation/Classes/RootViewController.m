@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-#import "HFUCWRotationalPanRecognizer.h"
+#import "HFRotationalPanRecognizer.h"
 
 
 @implementation RootViewController
@@ -35,7 +35,7 @@
 
 - (void)addRotationGestureToView:(UIView *)view
 {
-   HFUCWRotationalPanRecognizer *rotation = [[HFUCWRotationalPanRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
+   HFRotationalPanRecognizer *rotation = [[HFRotationalPanRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
    [view addGestureRecognizer:rotation];
     rotation.rotationCentre = view.center;// Would be default anyway
     rotation.useViewCenterForRotationCentre = NO; // Needs to be set if
@@ -84,7 +84,7 @@
    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 }
 
-- (void)rotating:(HFUCWRotationalPanRecognizer *)recognizer
+- (void)rotating:(HFRotationalPanRecognizer *)recognizer
 {
    UIView *view = [recognizer view];
    [view setTransform:CGAffineTransformRotate([view transform], [recognizer rotationAngle])];

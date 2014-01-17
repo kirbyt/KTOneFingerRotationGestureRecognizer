@@ -1,5 +1,5 @@
 //
-//  HFUCWRotationalPanRecognizer.m
+//  HFRotationalPanRecognizer.m
 //
 //  Created by Joseph Lord on 15/01/2014.
 //  Copyright (c) 2014 Human Friendly Ltd.
@@ -10,7 +10,7 @@
 //  polite request. The MIT license provisions are the only legal license.
 //
 
-#import "HFUCWRotationalPanRecognizer.h"
+#import "HFRotationalPanRecognizer.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 @interface AngleTime : NSObject
@@ -29,7 +29,7 @@
 
 @end
 
-@interface HFUCWRotationalPanRecognizer()
+@interface HFRotationalPanRecognizer()
 {
     NSMutableArray * angleDates;
     //CGPoint touchOrigin; // Keep the same origin for the duration of the touch?
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation HFUCWRotationalPanRecognizer
+@implementation HFRotationalPanRecognizer
 
 #pragma mark init
 

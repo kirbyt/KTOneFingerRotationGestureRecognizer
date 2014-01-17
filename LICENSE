@@ -1,7 +1,7 @@
 The MIT License
 
 Copyright (c) 2011 White Peak Software Inc (Excludes 
-HFUCWRotationalPanRecognizer.h and HFUCWRotationalPanRecognizer.c which were
+HFRotationalPanRecognizer.h and HFRotationalPanRecognizer.c which were
 developed externally and dropped in as replacements for
 KTOneFingerRotationGestureRecognizer).
 

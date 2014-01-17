@@ -1,7 +1,7 @@
-HFUCWRotationalPanRecognizer
+HFRotationalPanRecognizer
 ============================
 
-HFUCWRotationalPanRecognizer is a custom UIGestureRecognizer for doing one finger rotations in iOS apps. It tracks the angle of finger movement about a point (defined in the co-ordinate space of the gesture's view's superview). 
+HFRotationalPanRecognizer is a custom UIGestureRecognizer for doing one finger rotations in iOS apps. It tracks the angle of finger movement about a point (defined in the co-ordinate space of the gesture's view's superview). 
 
 By default it excludes/stops tracking a gesture that approaches too close to the rotation origin (default 40pts) or if the gesture leaves the view (pointInside: return NO). 
 
@@ -25,10 +25,10 @@ License
 
 The MIT License
 
-Copyright (c) 2014 Human-Friendly Ltd. HFUCWRotationalPanRecognizer (.c/.h)
+Copyright (c) 2014 Human-Friendly Ltd. HFRotationalPanRecognizer (.c/.h)
 
 Copyright (c) 2011 White Peak Software Inc (Excludes 
-HFUCWRotationalPanRecognizer(.c/.h) which were developed externally and dropped
+HFRotationalPanRecognizer(.c/.h) which were developed externally and dropped
 in as replacements for KTOneFingerRotationGestureRecognizer).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
