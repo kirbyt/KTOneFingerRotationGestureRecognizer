@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-#import "KTOneFingerRotationGestureRecognizer.h"
+#import "HFRotationalPanRecognizer.h"
 
 
 @implementation RootViewController
@@ -19,10 +19,9 @@
 - (void)dealloc
 {
    
-   [imageView1_ release], imageView1_ = nil;
-   [imageView2_ release], imageView2_ = nil;
-   [imageView3_ release], imageView3_ = nil;
-   [super dealloc];
+   imageView1_ = nil;
+   imageView2_ = nil;
+   imageView3_ = nil;
 }
 
 - (id)init
@@ -36,9 +35,11 @@
 
 - (void)addRotationGestureToView:(UIView *)view
 {
-   KTOneFingerRotationGestureRecognizer *rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
+   HFRotationalPanRecognizer *rotation = [[HFRotationalPanRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
    [view addGestureRecognizer:rotation];
-   [rotation release];
+    rotation.rotationCentre = view.center;// Would be default anyway
+    rotation.useViewCenterForRotationCentre = NO; // Needs to be set if
+                                                  //rotationCentre  control is to be effective
 }
 
 - (void)addTapGestureToView:(UIView *)view numberOfTaps:(NSInteger)numberOfTaps
@@ -46,7 +47,6 @@
    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
    [tap setNumberOfTapsRequired:numberOfTaps];
    [view addGestureRecognizer:tap];
-   [tap release];
 }
 
 - (void)viewDidLoad
@@ -84,10 +84,11 @@
    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 }
 
-- (void)rotating:(KTOneFingerRotationGestureRecognizer *)recognizer
+- (void)rotating:(HFRotationalPanRecognizer *)recognizer
 {
    UIView *view = [recognizer view];
-   [view setTransform:CGAffineTransformRotate([view transform], [recognizer rotation])];
+   [view setTransform:CGAffineTransformRotate([view transform], [recognizer rotationAngle])];
+    recognizer.rotationAngle = 0.0;
 }
 
 - (void)tapped:(UITapGestureRecognizer *)recognizer

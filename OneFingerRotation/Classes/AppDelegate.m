@@ -19,7 +19,6 @@
    // Override point for customization after application launch.
    RootViewController *newController = [[RootViewController alloc] init];
    [[self window] setRootViewController:newController];
-   [newController release];
    
    [[self window] makeKeyAndVisible];
    return YES;
@@ -64,10 +63,5 @@
     */
 }
 
-- (void)dealloc
-{
-   [_window release];
-    [super dealloc];
-}
 
 @end

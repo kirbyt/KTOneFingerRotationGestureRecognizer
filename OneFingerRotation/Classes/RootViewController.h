@@ -14,8 +14,8 @@
     
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *imageView1;
-@property (nonatomic, retain) IBOutlet UIImageView *imageView2;
-@property (nonatomic, retain) IBOutlet UIImageView *imageView3;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView1;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView2;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView3;
 
 @end
