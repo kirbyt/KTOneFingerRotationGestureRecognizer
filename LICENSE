@@ -1,9 +1,10 @@
 The MIT License
 
-Copyright (c) 2011 White Peak Software Inc (Excludes 
-HFRotationalPanRecognizer.h and HFRotationalPanRecognizer.c which were
-developed externally and dropped in as replacements for
-KTOneFingerRotationGestureRecognizer).
+Copyright (c) 2014 Human-Friendly Ltd. Only - HFRotationalPanRecognizer (.c/.h)
+
+Copyright (c) 2011 White Peak Software Inc (All except 
+HFRotationalPanRecognizer(.c/.h) which were developed externally and dropped
+in as replacements for KTOneFingerRotationGestureRecognizer).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
